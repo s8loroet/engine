@@ -21,7 +21,6 @@ public class SplitSample extends App {
         sp.setPosition(20);
         p.add(sp);
 
-        sp.setStyle("height", "400px");
         sp.setStyle("height", "500px");
         sp.setStyle("width", "100%");
         sp.getStartPanel().setStyle("background-color", "red");

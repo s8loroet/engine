@@ -2,7 +2,7 @@ package dwcjsample;
 
 import org.dwcj.App;
 import org.dwcj.controls.Button;
-import org.dwcj.controls.ComboBox;
+import org.dwcj.controls.ListButton;
 import org.dwcj.controls.IExpansible.Expanse;
 import org.dwcj.controls.IThemable.Theme;
 import org.dwcj.controls.Label;
@@ -20,7 +20,7 @@ public class SampleAppPanel extends AppPanel {
 
     private final TextBox ed_firstname;
     private final TextBox ed_lastname;
-    private final ComboBox cb_gender;
+    private final ListButton cb_gender;
     private final Label ratingText;
     private final Rating ratingctrl;
 
@@ -52,7 +52,7 @@ public class SampleAppPanel extends AppPanel {
         genders.put("m", "Male");
         genders.put("f", "Female");
         genders.put("o", "Other");
-        cb_gender = new ComboBox();
+        cb_gender = new ListButton();
         cb_gender.setItems(genders);
         add(cb_gender);
         cb_gender.setStyle("width", "100%");

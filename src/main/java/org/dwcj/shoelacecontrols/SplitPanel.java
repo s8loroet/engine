@@ -53,7 +53,7 @@ public class SplitPanel extends AbstractShoelaceControl implements IStyleable {
             ControlAccessor.getDefault().create(startPanel, p);
             startPanel.setAttribute("slot", "start");
             endPanel = new Div();
-            ControlAccessor.getDefault().create(startPanel, p);
+            ControlAccessor.getDefault().create(endPanel, p);
             endPanel.setAttribute("slot", "end");
 
             Environment.getInstance().getSysGui().executeScript("document.getElementById('" + uuid + "').appendChild(document.getElementById('" + startPanel.getAttribute("id") + "'));" + "document.getElementById('" + uuid + "').appendChild(document.getElementById('" + endPanel.getAttribute("id") + "'));");
