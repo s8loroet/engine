@@ -13,7 +13,7 @@ public class TextBoxSpinner extends AbstractDwcControl implements IThemable, IEx
         try {
             BBjWindow w = PanelAccessor.getDefault().getBBjWindow(p);
             //todo: honor visibility flag, if set before adding the control to the form, so it's created invisibly right away
-            w.addEditBoxSpinner(w.getAvailableControlID(), BASISNUMBER_1, BASISNUMBER_1, BASISNUMBER_1, BASISNUMBER_1, "");
+            ctrl = w.addEditBoxSpinner(w.getAvailableControlID(), BASISNUMBER_1, BASISNUMBER_1, BASISNUMBER_1, BASISNUMBER_1, "");
             catchUp();
         } catch (Exception e)  {
             e.printStackTrace();

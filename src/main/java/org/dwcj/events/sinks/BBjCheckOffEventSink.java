@@ -2,6 +2,7 @@ package org.dwcj.events.sinks;
 
 import com.basis.bbj.proxies.event.BBjCheckOffEvent;
 import com.basis.bbj.proxies.sysgui.BBjControl;
+import org.dwcj.App;
 import org.dwcj.Environment;
 import org.dwcj.bridge.ControlAccessor;
 import org.dwcj.controls.CheckBox;
@@ -25,11 +26,15 @@ public class BBjCheckOffEventSink {
         BBjControl bbjctrl = null;
         try {
             bbjctrl = ControlAccessor.getDefault().getBBjControl(cb);
+            App.consoleLog(String.valueOf(cb != null));
+            App.consoleLog(String.valueOf(bbjctrl != null));
             bbjctrl.setCallback(Environment.getInstance().getBBjAPI().ON_CHECK_OFF, Environment.getInstance().getDwcjHelper().getEventProxy(this, "onEvent"), "onEvent");
         } catch (Exception e) {
+            App.consoleLog("Error CheckOff"+e.getMessage());
             e.printStackTrace();
         }
 
+        App.consoleLog("Event registriert");
         this.ctrl = bbjctrl;
     }
 

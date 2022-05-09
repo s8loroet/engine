@@ -1,6 +1,7 @@
 package org.dwcj.events.sinks;
 
 import com.basis.bbj.proxies.event.BBjCheckOffEvent;
+import com.basis.bbj.proxies.event.BBjCheckOnEvent;
 import com.basis.bbj.proxies.sysgui.BBjControl;
 import org.dwcj.Environment;
 import org.dwcj.bridge.ControlAccessor;
@@ -34,7 +35,7 @@ public class BBjCheckOnEventSink {
         this.ctrl = bbjctrl;
     }
 
-    public void onEvent(BBjCheckOffEvent ev) {
+    public void onEvent(BBjCheckOnEvent ev) {
         CheckOnEvent dwc_ev = new CheckOnEvent(null);
         target.accept(dwc_ev);
     }
