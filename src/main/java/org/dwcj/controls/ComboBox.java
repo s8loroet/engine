@@ -43,9 +43,21 @@ public class ComboBox extends AbstractDwclistControl implements IStyleable, IThe
 
     }
 
+    /**
+     * Add an item into the combobox
+     *
+     * @param key the item key
+     * @param value the item's value
+     * @return the control itself
+     */
+    public ComboBox addItem(Object key, String value) {
+        this.values.put(key, value);
+        populate();
+        return this;
+    }
 
     /**
-     * set the list of items into the comboboc
+     * set the list of items into the combobox
      *
      * @param values A Map object containing the key-value pairs for the list
      * @return the control itself
@@ -54,6 +66,40 @@ public class ComboBox extends AbstractDwclistControl implements IStyleable, IThe
         this.values = values;
         populate();
         return this;
+    }
+
+    /**
+     *
+     * @return all values in the comboBox
+     */
+    public Map<Object, String> getAllItems() {
+        return this.values;
+    }
+
+    /**
+     * Returns an item from the comboBox
+     *
+     * @param index the index of the requested item
+     * @return the item itself
+     */
+    public String getItemAt(int index) {
+        try {
+            return ((BBjListButton) this.ctrl).getItemAt(index);
+        } catch (BBjException e) {
+            e.printStackTrace();
+        }
+        return "";
+    }
+
+    /**
+     * opens the ComboBox dropdown list
+     */
+    public void open() {
+        try {
+            ((BBjListButton) this.ctrl).openList();
+        } catch (BBjException e) {
+            e.printStackTrace();
+        }
     }
 
 

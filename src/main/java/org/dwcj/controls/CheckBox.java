@@ -12,6 +12,9 @@ import java.util.function.Consumer;
 
 public class CheckBox extends AbstractDwcControl implements IStyleable, IExpansible {
 
+
+    private Consumer<CheckBoxCheckEvent> callback;
+
     public CheckBox() {
     }
 
@@ -34,8 +37,14 @@ public class CheckBox extends AbstractDwcControl implements IStyleable, IExpansi
      * @return
      */
     public CheckBox onCheck(Consumer<CheckBoxCheckEvent> callback) {
+        this.callback = callback;
         new BBjCheckBoxCheckEventSink(this, callback);
         return this;
+    }
+
+    public void doCheck() {
+        CheckBoxCheckEvent dwc_ev = new CheckBoxCheckEvent(this);
+        callback.accept(dwc_ev);
     }
 
 
