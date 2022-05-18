@@ -1,5 +1,6 @@
 package org.dwcj.events;
 
+import com.basis.bbj.proxies.sysgui.BBjComboBox;
 import org.dwcj.controls.ComboBox;
 
 public class ComboBoxSelectEvent implements IDwcEvent {

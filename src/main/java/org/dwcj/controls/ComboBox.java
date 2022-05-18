@@ -18,6 +18,7 @@ import java.util.function.Consumer;
  */
 public class ComboBox extends AbstractDwclistControl implements IStyleable, IThemable, IExpansible {
 
+    private Consumer<ComboBoxSelectEvent> callback;
 
     public ComboBox() {
     }
@@ -76,6 +77,14 @@ public class ComboBox extends AbstractDwclistControl implements IStyleable, IThe
     public ComboBox onSelect(Consumer<ComboBoxSelectEvent> callback) {
         new BBjComboBoxSelectEventSink(this, callback);
         return this;
+    }
+
+    /**
+     * Selects an element, for testing purposes
+     */
+    public void doSelect() {
+        ComboBoxSelectEvent dwc_ev = new ComboBoxSelectEvent(this);
+        callback.accept(dwc_ev);
     }
 
     @Override
