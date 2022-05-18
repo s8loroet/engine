@@ -13,9 +13,9 @@ import java.util.Map;
 /**
  * ComboBoxEdit Control
  */
-public class ListEdit extends AbstractDwclistControl implements IStyleable, IThemable, IExpansible {
+public class TextComboBox extends AbstractDwclistControl implements IStyleable, IThemable, IExpansible {
 
-    public ListEdit() {
+    public TextComboBox() {
     }
 
     @Override
@@ -41,7 +41,7 @@ public class ListEdit extends AbstractDwclistControl implements IStyleable, IThe
      * @param values A Map object containing the key-value pairs for the list
      * @return the control itself
      */
-    public ListEdit setItems(Map<Object, String> values) {
+    public TextComboBox setItems(Map<Object, String> values) {
         this.values = values;
         populate();
         return this;
@@ -67,31 +67,31 @@ public class ListEdit extends AbstractDwclistControl implements IStyleable, IThe
 
 
     @Override
-    public ListEdit setExpanse(Expanse expanse) {
+    public TextComboBox setExpanse(Expanse expanse) {
         super.setControlExpanse(expanse);
         return this;
     }
 
     @Override
-    public ListEdit setStyle(String property, String value) {
+    public TextComboBox setStyle(String property, String value) {
         super.setControlStyle(property, value);
         return this;
     }
 
     @Override
-    public ListEdit addClass(String selector) {
+    public TextComboBox addClass(String selector) {
         super.addControlCssClass(selector);
         return this;
     }
 
     @Override
-    public ListEdit removeClass(String selector) {
+    public TextComboBox removeClass(String selector) {
         super.removeControlCssClass(selector);
         return this;
     }
 
     @Override
-    public ListEdit setTheme(Theme theme) {
+    public TextComboBox setTheme(Theme theme) {
         super.setControlTheme(theme);
         return this;
     }

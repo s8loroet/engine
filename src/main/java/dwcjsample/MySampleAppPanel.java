@@ -1,10 +1,12 @@
 package dwcjsample;
 
+import com.basis.bbj.proxies.sysgui.BBjComboBox;
+import com.basis.bbj.proxies.sysgui.BBjListButton;
 import org.dwcj.App;
 import org.dwcj.controls.*;
 import org.dwcj.events.ButtonPushEvent;
-import org.dwcj.events.CheckOffEvent;
-import org.dwcj.events.CheckOnEvent;
+import org.dwcj.events.CheckBoxCheckEvent;
+import org.dwcj.events.ComboBoxSelectEvent;
 import org.dwcj.exceptions.DwcAppInitializeException;
 import org.dwcj.panels.AppPanel;
 
@@ -19,9 +21,9 @@ public class MySampleAppPanel extends AppPanel{
 
     private final CheckBox checkBox;
 
-    private final ListEdit cbe;
+    private final ComboBox cb;
 
-    private final InputD date;
+    private final DateEditBox date;
 
     public MySampleAppPanel() throws DwcAppInitializeException {
 
@@ -48,18 +50,18 @@ public class MySampleAppPanel extends AppPanel{
         genders.put("m", "Male");
         genders.put("f", "Female");
         genders.put("o", "Other");
-        cbe = new ListEdit();
-        cbe.setItems(genders);
-        add(cbe);
-        cbe.setStyle("width","100%");
+        cb = new ComboBox();
+        cb.setItems(genders);
+        add(cb);
+        cb.setStyle("width","100%");
+        cb.onSelect(this::onSampleSelect);
 
         checkBox = new CheckBox();
         add(checkBox);
-        checkBox.onCheckOff(this::onSampleCheckOff);
-        checkBox.onCheckOn(this::onSampleCheckOn);
+        checkBox.onCheck(this::onSampleCheck);
 
         add(new Label("Current date:"));
-        date = new InputD();
+        date = new DateEditBox();
         add(date);
 
 
@@ -74,14 +76,20 @@ public class MySampleAppPanel extends AppPanel{
         btn.onClick(this::onSampleButtonPush);
     }
 
-    private void onSampleCheckOff(CheckOffEvent ev) {
-        String text = "Umentschieden?";
-        App.msgbox(text, 0, "Hallo Welt");
+
+    private void onSampleSelect(ComboBoxSelectEvent ev) {
+        String text = "Selected!";
+        App.msgbox(text, 0, "Hallo Welt!");
     }
 
-    private void onSampleCheckOn(CheckOnEvent ev) {
-        String text = "Cool";
-        App.msgbox(text, 0, "Hallo Welt");
+    private void onSampleCheck(CheckBoxCheckEvent ev) {
+        if (ev.isSelected()) {
+            String text = "Umentschieden?";
+            App.msgbox(text, 0, "Hallo Welt");
+        } else {
+            String text = "Umentschieden?";
+            App.msgbox(text, 0, "Hallo Welt");
+        }
     }
 
     private void onSampleButtonPush(ButtonPushEvent ev) {

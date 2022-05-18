@@ -1,12 +1,11 @@
 package org.dwcj.controls;
 
+import com.basis.bbj.proxies.sysgui.BBjCheckBox;
 import com.basis.bbj.proxies.sysgui.BBjWindow;
 import com.basis.startup.type.BBjException;
 import org.dwcj.bridge.PanelAccessor;
-import org.dwcj.events.CheckOffEvent;
-import org.dwcj.events.CheckOnEvent;
-import org.dwcj.events.sinks.BBjCheckOffEventSink;
-import org.dwcj.events.sinks.BBjCheckOnEventSink;
+import org.dwcj.events.CheckBoxCheckEvent;
+import org.dwcj.events.sinks.BBjCheckBoxCheckEventSink;
 import org.dwcj.panels.AbstractDwcjPanel;
 
 import java.util.function.Consumer;
@@ -23,31 +22,31 @@ public class CheckBox extends AbstractDwcControl implements IStyleable, IExpansi
             //todo: honor visibility flag, if set before adding the control to the form, so it's created invisibly right away
             ctrl = w.addCheckBox(w.getAvailableControlID(), BASISNUMBER_1, BASISNUMBER_1, BASISNUMBER_1, BASISNUMBER_1, "");
             catchUp();
-        } catch (Exception e)  {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
     /**
-     * register an event callback for the checkOff event
+     * register an event callback for a checkOn or checkOff event
      *
-     * @param callback A method to receive the checkOff event
-     * @return the control itself
+     * @param callback A method to receive the onCheck event
+     * @return
      */
-    public CheckBox onCheckOff(Consumer<CheckOffEvent> callback) {
-        new BBjCheckOffEventSink(this, callback);
+    public CheckBox onCheck(Consumer<CheckBoxCheckEvent> callback) {
+        new BBjCheckBoxCheckEventSink(this, callback);
         return this;
     }
 
-    /**
-     * register an event callback for the checkOn event
-     *
-     * @param callback A method to receive the checkOn event
-     * @return the control itself
-     */
-    public CheckBox onCheckOn(Consumer<CheckOnEvent> callback) {
-        new BBjCheckOnEventSink(this, callback);
-        return this;
+
+    public boolean isSelected() {
+        //todo: why could an exception be thrown?
+        try {
+            return ((BBjCheckBox) this.ctrl).isSelected();
+        } catch (BBjException e) {
+            e.printStackTrace();
+        }
+        return false;
     }
 
     @Override

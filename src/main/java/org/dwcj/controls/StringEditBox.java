@@ -4,18 +4,19 @@ import com.basis.bbj.proxies.sysgui.BBjWindow;
 import org.dwcj.bridge.PanelAccessor;
 import org.dwcj.panels.AbstractDwcjPanel;
 
-public class InputD extends AbstractDwcControl implements IStyleable, IThemable, IExpansible {
-    
-    public InputD(){}
+public class StringEditBox extends AbstractDwcControl implements IStyleable, IThemable, IExpansible {
 
-    public InputD(String text) { setText(text); }
-    
-    @Override
+    public StringEditBox() {}
+
+    public StringEditBox(String text) {
+        setText(text);
+    }
+
     void create(AbstractDwcjPanel p) {
         try {
             BBjWindow w = PanelAccessor.getDefault().getBBjWindow(p);
             //todo: honor visibility flag, if set before adding the control to the form, so it's created invisibly right away
-            ctrl = w.addInputD(w.getAvailableControlID(), BASISNUMBER_1, BASISNUMBER_1, BASISNUMBER_1, BASISNUMBER_1);
+            ctrl = w.addInputE(w.getAvailableControlID(), BASISNUMBER_1, BASISNUMBER_1, BASISNUMBER_1, BASISNUMBER_1);
             catchUp();
         } catch (Exception e) {
             e.printStackTrace();
@@ -23,37 +24,38 @@ public class InputD extends AbstractDwcControl implements IStyleable, IThemable,
     }
 
     @Override
-    public InputD 
-setExpanse(Expanse expanse) {
+    public StringEditBox setExpanse(Expanse expanse) {
         super.setControlExpanse(expanse);
         return this;
     }
 
     @Override
-    public InputD 
-setStyle(String property, String value) {
+    public StringEditBox setStyle(String property, String value) {
         super.setControlStyle(property, value);
         return this;
     }
 
     @Override
-    public InputD 
-addClass(String selector) {
+    public StringEditBox addClass(String selector) {
         super.addControlCssClass(selector);
         return this;
     }
 
     @Override
-    public InputD 
-removeClass(String selector) {
+    public StringEditBox removeClass(String selector) {
         super.removeControlCssClass(selector);
         return this;
     }
 
     @Override
-    public InputD 
-setTheme(Theme theme) {
+    public StringEditBox setTheme(Theme theme) {
         super.setControlTheme(theme);
         return this;
-    } 
+    }
+
+    @Override
+    public StringEditBox setText(String text) {
+        super.setText(text);
+        return this;
+    }
 }

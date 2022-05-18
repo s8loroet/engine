@@ -5,10 +5,13 @@ import com.basis.bbj.proxies.sysgui.BBjWindow;
 import com.basis.startup.type.BBjException;
 import com.basis.startup.type.BBjVector;
 import org.dwcj.bridge.PanelAccessor;
+import org.dwcj.events.ComboBoxSelectEvent;
+import org.dwcj.events.sinks.BBjComboBoxSelectEventSink;
 import org.dwcj.panels.AbstractDwcjPanel;
 
 import java.util.Iterator;
 import java.util.Map;
+import java.util.function.Consumer;
 
 /**
  * Combobox Control
@@ -70,6 +73,10 @@ public class ComboBox extends AbstractDwclistControl implements IStyleable, IThe
 
     }
 
+    public ComboBox onSelect(Consumer<ComboBoxSelectEvent> callback) {
+        new BBjComboBoxSelectEventSink(this, callback);
+        return this;
+    }
 
     @Override
     public ComboBox setExpanse(Expanse expanse) {

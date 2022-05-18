@@ -1,7 +1,7 @@
 package dwcjsample.testsamples;
 
 import org.dwcj.App;
-import org.dwcj.controls.FileChooser;
+import org.dwcj.controls.OpenFileDialog;
 import org.dwcj.exceptions.DwcAppInitializeException;
 import org.dwcj.panels.AppPanel;
 
@@ -26,7 +26,7 @@ class FileChooserSampleAppPanel extends AppPanel {
         setStyle("border", "1px dotted");
         setStyle("padding", "10px");
 
-        FileChooser fileChooser = new FileChooser();
-        add(fileChooser);
+        OpenFileDialog openFileDialog = new OpenFileDialog();
+        add(openFileDialog);
     }
 }

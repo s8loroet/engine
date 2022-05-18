@@ -1,7 +1,7 @@
 package dwcjsample.testsamples;
 
 import org.dwcj.App;
-import org.dwcj.controls.Tree;
+import org.dwcj.controls.TreeView;
 import org.dwcj.exceptions.DwcAppInitializeException;
 import org.dwcj.panels.AppPanel;
 
@@ -26,7 +26,7 @@ class TreeSampleAppPanel extends AppPanel {
         setStyle("border", "1px dotted");
         setStyle("padding", "10px");
 
-        Tree tree = new Tree();
+        TreeView tree = new TreeView();
         add(tree);
     }
 }

@@ -1,7 +1,7 @@
 package dwcjsample.testsamples;
 
 import org.dwcj.App;
-import org.dwcj.controls.TabCtrl;
+import org.dwcj.controls.TabControl;
 import org.dwcj.exceptions.DwcAppInitializeException;
 import org.dwcj.panels.AppPanel;
 
@@ -26,7 +26,7 @@ class TabCtrlSampleAppPanel extends AppPanel {
         setStyle("border", "1px dotted");
         setStyle("padding", "10px");
 
-        TabCtrl tabCtrl = new TabCtrl();
-        add(tabCtrl);
+        TabControl tabControl = new TabControl();
+        add(tabControl);
     }
 }

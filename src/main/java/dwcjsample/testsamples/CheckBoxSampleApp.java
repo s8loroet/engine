@@ -30,4 +30,5 @@ class CheckBoxSampleAppPanel extends AppPanel {
         CheckBox checkBox = new CheckBox();
         add(checkBox);
     }
+
 }

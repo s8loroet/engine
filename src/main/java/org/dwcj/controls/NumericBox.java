@@ -4,11 +4,11 @@ import com.basis.bbj.proxies.sysgui.BBjWindow;
 import org.dwcj.bridge.PanelAccessor;
 import org.dwcj.panels.AbstractDwcjPanel;
 
-public class InputE extends AbstractDwcControl implements IStyleable, IThemable, IExpansible {
+public class NumericBox extends AbstractDwcControl implements IStyleable, IThemable, IExpansible {
 
-    public InputE() {}
+    public NumericBox() {}
 
-    public InputE(String text) {
+    public NumericBox(String text) {
         setText(text);
     }
 
@@ -16,7 +16,7 @@ public class InputE extends AbstractDwcControl implements IStyleable, IThemable,
         try {
             BBjWindow w = PanelAccessor.getDefault().getBBjWindow(p);
             //todo: honor visibility flag, if set before adding the control to the form, so it's created invisibly right away
-            ctrl = w.addInputE(w.getAvailableControlID(), BASISNUMBER_1, BASISNUMBER_1, BASISNUMBER_1, BASISNUMBER_1);
+            ctrl = w.addInputN(w.getAvailableControlID(), BASISNUMBER_1, BASISNUMBER_1, BASISNUMBER_1, BASISNUMBER_1);
             catchUp();
         } catch (Exception e) {
             e.printStackTrace();
@@ -24,37 +24,37 @@ public class InputE extends AbstractDwcControl implements IStyleable, IThemable,
     }
 
     @Override
-    public InputE setExpanse(Expanse expanse) {
+    public NumericBox setExpanse(Expanse expanse) {
         super.setControlExpanse(expanse);
         return this;
     }
 
     @Override
-    public InputE setStyle(String property, String value) {
+    public NumericBox setStyle(String property, String value) {
         super.setControlStyle(property, value);
         return this;
     }
 
     @Override
-    public InputE addClass(String selector) {
+    public NumericBox addClass(String selector) {
         super.addControlCssClass(selector);
         return this;
     }
 
     @Override
-    public InputE removeClass(String selector) {
+    public NumericBox removeClass(String selector) {
         super.removeControlCssClass(selector);
         return this;
     }
 
     @Override
-    public InputE setTheme(Theme theme) {
+    public NumericBox setTheme(Theme theme) {
         super.setControlTheme(theme);
         return this;
     }
 
     @Override
-    public InputE setText(String text) {
+    public NumericBox setText(String text) {
         super.setText(text);
         return this;
     }

@@ -1,7 +1,7 @@
 package dwcjsample.testsamples;
 
 import org.dwcj.App;
-import org.dwcj.controls.InputNSpinner;
+import org.dwcj.controls.NumericBoxSpinner;
 import org.dwcj.exceptions.DwcAppInitializeException;
 import org.dwcj.panels.AppPanel;
 
@@ -26,7 +26,7 @@ class InputNSpinnerSampleAppPanel extends AppPanel {
         setStyle("border", "1px dotted");
         setStyle("padding", "10px");
 
-        InputNSpinner inputNSpinner = new InputNSpinner();
-        add(inputNSpinner);
+        NumericBoxSpinner numericBoxSpinner = new NumericBoxSpinner();
+        add(numericBoxSpinner);
     }
 }

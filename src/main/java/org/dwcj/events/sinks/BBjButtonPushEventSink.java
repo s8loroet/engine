@@ -25,7 +25,9 @@ public class BBjButtonPushEventSink {
         BBjControl bbjctrl = null;
         try {
             bbjctrl = ControlAccessor.getDefault().getBBjControl(btn);
-            bbjctrl.setCallback(Environment.getInstance().getBBjAPI().ON_BUTTON_PUSH, Environment.getInstance().getDwcjHelper().getEventProxy(this, "onEvent"), "onEvent");
+            bbjctrl.setCallback(Environment.getInstance().getBBjAPI().ON_BUTTON_PUSH,
+                    Environment.getInstance().getDwcjHelper().getEventProxy(this, "pushEvent"),
+                    "onEvent");
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -34,8 +36,8 @@ public class BBjButtonPushEventSink {
         this.ctrl = bbjctrl;
     }
 
-    public void onEvent(BBjButtonPushEvent ev) {
-        ButtonPushEvent dwc_ev = new ButtonPushEvent(null);
+    public void pushEvent(BBjButtonPushEvent ev) {
+        ButtonPushEvent dwc_ev = new ButtonPushEvent(this.button);
         target.accept(dwc_ev);
     }
 

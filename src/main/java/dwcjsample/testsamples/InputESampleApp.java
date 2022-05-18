@@ -1,7 +1,7 @@
 package dwcjsample.testsamples;
 
 import org.dwcj.App;
-import org.dwcj.controls.InputE;
+import org.dwcj.controls.StringEditBox;
 import org.dwcj.exceptions.DwcAppInitializeException;
 import org.dwcj.panels.AppPanel;
 
@@ -26,7 +26,7 @@ class InputESampleAppPanel extends AppPanel {
         setStyle("border", "1px dotted");
         setStyle("padding", "10px");
 
-        InputE inputE = new InputE();
-        add(inputE);
+        StringEditBox stringEditBox = new StringEditBox();
+        add(stringEditBox);
     }
 }

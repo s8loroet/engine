@@ -2,6 +2,9 @@ package dwcjsample.testsamples;
 
 import org.dwcj.App;
 import org.dwcj.controls.Button;
+import org.dwcj.controls.IExpansible;
+import org.dwcj.controls.IThemable;
+import org.dwcj.events.ButtonPushEvent;
 import org.dwcj.exceptions.DwcAppInitializeException;
 import org.dwcj.panels.AppPanel;
 
@@ -29,5 +32,15 @@ class ButtonSampleAppPanel extends AppPanel {
 
         Button btn = new Button("button");
         add(btn);
+        btn.setTheme(IThemable.Theme.DEFAULT);
+        btn.setExpanse(IExpansible.Expanse.LARGE);
+        btn.setStyle("grid-column","1 / span 2");
+        btn.setStyle("width", "100%");
+        btn.onClick(this::onButtonClick);
+        btn.doClick();
+    }
+
+    private void onButtonClick(ButtonPushEvent ev) {
+        App.msgbox("lol", 0, "");
     }
 }

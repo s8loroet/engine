@@ -4,9 +4,9 @@ import com.basis.bbj.proxies.sysgui.BBjWindow;
 import org.dwcj.bridge.PanelAccessor;
 import org.dwcj.panels.AbstractDwcjPanel;
 
-public class Tree extends AbstractDwcControl implements IExpansible {
+public class TreeView extends AbstractDwcControl implements IExpansible {
 
-    public Tree() {}
+    public TreeView() {}
 
     @Override
     void create(AbstractDwcjPanel p) {
@@ -21,7 +21,7 @@ public class Tree extends AbstractDwcControl implements IExpansible {
     }
 
     @Override
-    public Tree setExpanse(Expanse expanse) {
+    public TreeView setExpanse(Expanse expanse) {
         super.setControlExpanse(expanse);
         return this;
     }

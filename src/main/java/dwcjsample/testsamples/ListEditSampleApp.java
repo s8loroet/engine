@@ -1,7 +1,7 @@
 package dwcjsample.testsamples;
 
 import org.dwcj.App;
-import org.dwcj.controls.ListEdit;
+import org.dwcj.controls.TextComboBox;
 import org.dwcj.exceptions.DwcAppInitializeException;
 import org.dwcj.panels.AppPanel;
 
@@ -26,7 +26,7 @@ class ListEditSampleAppPanel extends AppPanel {
         setStyle("border", "1px dotted");
         setStyle("padding", "10px");
 
-        ListEdit listEdit = new ListEdit();
-        add(listEdit);
+        TextComboBox textComboBox = new TextComboBox();
+        add(textComboBox);
     }
 }

@@ -4,15 +4,15 @@ import com.basis.bbj.proxies.sysgui.BBjWindow;
 import org.dwcj.bridge.PanelAccessor;
 import org.dwcj.panels.AbstractDwcjPanel;
 
-public class InputESpinner extends AbstractDwcControl implements IThemable, IExpansible {
+public class NumericBoxSpinner extends AbstractDwcControl implements IThemable, IExpansible {
 
-    public InputESpinner() {}
+    public NumericBoxSpinner() {}
 
     void create(AbstractDwcjPanel p) {
         try {
             BBjWindow w = PanelAccessor.getDefault().getBBjWindow(p);
             //todo: honor visibility flag, if set before adding the control to the form, so it's created invisibly right away
-            ctrl = w.addInputESpinner(w.getAvailableControlID(), BASISNUMBER_1, BASISNUMBER_1, BASISNUMBER_1, BASISNUMBER_1);
+            ctrl = w.addInputNSpinner(w.getAvailableControlID(), BASISNUMBER_1, BASISNUMBER_1, BASISNUMBER_1, BASISNUMBER_1);
             catchUp();
         } catch (Exception e) {
             e.printStackTrace();
@@ -20,13 +20,13 @@ public class InputESpinner extends AbstractDwcControl implements IThemable, IExp
     }
 
     @Override
-    public InputESpinner setExpanse(Expanse expanse) {
+    public NumericBoxSpinner setExpanse(Expanse expanse) {
         super.setControlExpanse(expanse);
         return this;
     }
 
     @Override
-    public InputESpinner setTheme(Theme theme) {
+    public NumericBoxSpinner setTheme(Theme theme) {
         super.setControlTheme(theme);
         return this;
     }

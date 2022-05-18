@@ -1,7 +1,7 @@
 package dwcjsample.testsamples;
 
 import org.dwcj.App;
-import org.dwcj.controls.ColorChooser;
+import org.dwcj.controls.ColorPicker;
 import org.dwcj.exceptions.DwcAppInitializeException;
 import org.dwcj.panels.AppPanel;
 
@@ -27,7 +27,7 @@ class ColorChooserSampleAppPanel extends AppPanel {
         setStyle("border", "1px dotted");
         setStyle("padding", "10px");
 
-        ColorChooser colorChooser = new ColorChooser();
-        add(colorChooser);
+        ColorPicker colorPicker = new ColorPicker();
+        add(colorPicker);
     }
 }

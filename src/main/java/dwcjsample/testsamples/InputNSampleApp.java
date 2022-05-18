@@ -1,7 +1,7 @@
 package dwcjsample.testsamples;
 
 import org.dwcj.App;
-import org.dwcj.controls.InputN;
+import org.dwcj.controls.NumericBox;
 import org.dwcj.exceptions.DwcAppInitializeException;
 import org.dwcj.panels.AppPanel;
 
@@ -26,7 +26,7 @@ class InputNSampleAppPanel extends AppPanel {
         setStyle("border", "1px dotted");
         setStyle("padding", "10px");
 
-        InputN inputN = new InputN();
-        add(inputN);
+        NumericBox numericBox = new NumericBox();
+        add(numericBox);
     }
 }
